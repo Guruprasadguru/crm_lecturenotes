@@ -23,10 +23,5 @@ class ActivityForm(forms.ModelForm):
     class Meta:
         model=Activity
         fields='__all__'
-#
-# class Payment_detailForm(forms.ModelForm):
-#     class Meta:
-#         model = Payment_detail
-#         fields= ['payment_screenshot']
 
 
