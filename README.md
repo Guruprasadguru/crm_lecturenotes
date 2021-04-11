@@ -17,12 +17,15 @@ Log in into Dash Bord By Giving YOur USERNAME and PASSWORD
 step-5
 ------
 User Dashboard: The user should be able to see his pending tasks for the day.
+
 step-6
 -------
 User Aloso Update His Status And Give Remarks For The Task.
+
 Step-6
 ------
-Clicl on COstumer Details TAb to see All the CUstomers Details.
+Click on COstumer Details TAb to see All the CUstomers Details.
+
 step-7
 ------
 Add New Customer: A form should open where the user should be able to add Name, email, Phone and Address of a new Customer.
@@ -30,6 +33,7 @@ Add New Customer: A form should open where the user should be able to add Name, 
 step-8
 -------
 Search Customer: The user should be able to find a customer using his name and email.
+
 step-9
 ------
 Add new activity: The user should be able to add an activity done by a User with a customer 
