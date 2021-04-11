@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'app/base.html' %}
+{% load static %}
+<!-- Title of Page -->
+{% block title %} Activity {% endblock %}
+<!-- Head Bootstrap link -->
+{% block head %}
+
+{% endblock %}
+<!-- Define Body Here -->
+{% block body %}
+     <a href="/addactivity" class="btn mb-1 btn-primary btn-lg float-xl-right">Add Activity</a>
+    <div class="container-fluid">
+{#    <a href="/activity/{{ detail.id }}" class="btn mb-1 btn-success float-xl-right">Activity</a>#}
+                <div class="row">
+   <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <h4>PAST ACTIVITY</h4>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+
+                                                <th>Name</th>
+                                                <th>Activity</th>
+                                                <th>Date For Activity</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for detail in pactivity %}
+                                            <tr>
+                                                <th>{{ detail.name }}</th>
+                                                <td>{{ detail.activity}}</td>
+                                                <td>{{ detail.activity_for_date}}</td>
+
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <h4>FUTURE ACTIVITY</h4>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+
+                                                <th>Name</th>
+                                                <th>Activity</th>
+                                                <th>Date For Activity</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for detail in factivity %}
+                                            <tr>
+                                                <th>{{ detail.name }}</th>
+                                                <td>{{ detail.activity}}</td>
+                                                <td>{{ detail.activity_for_date}}</td>
+
+                                            </tr>
+                                        {% endfor %}
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+<!-- Bottom Bootstrap link -->
+{% block bottom %}
+
+{% endblock %}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'app/base.html' %}
+{% load static %}
+<!-- Title of Page -->
+{% block title %} Customer List {% endblock %}
+<!-- Head Bootstrap link -->
+{% block head %}
+
+{% endblock %}
+<!-- Define Body Here -->
+{% block body %}
+
+    <form action="" method="get">
+        <input name='q' type="text" class="form-control" placeholder="Search">
+    </form>
+    <a href="/addcustomer" class="btn mb-1 btn-primary btn-lg float-xl-right">Add Customer</a>
+    <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Customer List</h4>
+                                <div class="table-responsive">
+                                {% if customer_list %}
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+
+                                                <th>NAME</th>
+                                                <th>EMAIL</th>
+                                                <th>CONTACT NO</th>
+                                                <th>ADDRESS </th>
+                                                <th>ACTIVITY </th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for detail in customer_list %}
+                                            <tr>
+                                                <th>{{ detail.name }}</th>
+                                                <td>{{ detail.email }}</td>
+                                                <td>{{ detail.phone }}</td>
+                                                <td>{{ detail.address }}</td>
+                                            <td><a href="/activity/{{ detail.id }}" class="btn mb-1 btn-success float-middle">Activity</a></td>
+
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                {% else %}
+                                    <h2>No Customer History Found</h2>
+                                {% endif %}
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+</div>
+
+
+{% endblock %}
+
+<!-- Bottom Bootstrap link -->
+{% block bottom %}
+
+{% endblock %}

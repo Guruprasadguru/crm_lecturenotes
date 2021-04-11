@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'app/base.html' %}
+{% load static %}
+<!-- Title of Page -->
+{% block title %} Home {% endblock %}
+<!-- Head Bootstrap link -->
+{% block head %}
+
+{% endblock %}
+<!-- Define Body Here -->
+{% block body %}
+</div>
+    <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Pending Tasks For The Day</h4>
+                                <div class="table-responsive">
+                                {% if task %}
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>USER NAME</th>
+                                                <th>TASK TITLE</th>
+                                                <th>DESCRIPTION</th>
+                                                <th>TASK ADDED DATE</th>
+                                                <th>TASK FOR DATE</th>
+                                                <th>REMARK</th>
+                                                <th>STATUS</th>
+                                                <th>EDIT</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for orderitem in task %}
+                                            <tr>
+                                                <th>{{ orderitem.user.first_name }}</th>
+                                                <td>{{ orderitem.task_title}}</td>
+                                                <td>{{ orderitem.task_description}}</td>
+                                                <td><span class="badge badge-primary px-2">{{ orderitem.task_add_date}} </span>
+                                                </td>
+                                                <td><span class="badge badge-primary px-2">{{ orderitem.task_for_date}} </span>
+                                                </td>
+
+                                                <td>{{orderitem.remark}}</td>
+                                                <td><span class="label gradient-1 rounded">{{orderitem.task_status}}</span></td>
+                                                <td><a href="/update/{{ orderitem.id }}" class="btn mb-1 btn-success float-right">Edit</a></td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                {% else %}
+                                    <h2>No Subscription Found</h2>
+                                {% endif %}
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+</div>
+{% endblock %}
+
+<!-- Bottom Bootstrap link -->
+{% block bottom %}
+
+{% endblock %}
